@@ -11,11 +11,7 @@
  */
 
 /** Floating-button corner. */
-export type ButtonPosition =
-  | "bottom-left"
-  | "bottom-right"
-  | "top-left"
-  | "top-right";
+export type ButtonPosition = "bottom-left" | "bottom-right" | "top-left" | "top-right";
 
 /** How the booking UI is embedded. */
 export type EmbedMode = "modal" | "inline" | "popup" | "slide-left" | "slide-right" | "fullscreen";
@@ -29,7 +25,7 @@ export interface ErixMeetConfig {
   clientCode?: string;
   /** Book a specific event type directly (its slug). Omit for the picker. */
   slug?: string;
-  /** Base origin of the ECODrIx app. Default `https://app.ecodrix.com`. */
+  /** Base origin of the ECODrIx app. Default `https://meet.ecodrix.com` (where bookings are served). */
   baseUrl?: string;
   /** Advanced: explicit booking URL. Wins over clientCode/slug/baseUrl. */
   bookUrl?: string;
@@ -66,7 +62,7 @@ export interface ErixMeetConfig {
 }
 
 const DEFAULTS = {
-  baseUrl: "https://console.ecodrix.com",
+  baseUrl: "https://meet.ecodrix.com",
   mode: "modal" as EmbedMode,
   buttonText: "Book a meeting",
   buttonColor: "#4f46e5",
@@ -143,9 +139,7 @@ export class ErixMeetWidget {
   private mountInline(): void {
     const host = this.resolveTarget();
     if (!host) {
-      throw new Error(
-        "[ErixMeet] inline mode needs a valid `target` (selector or element).",
-      );
+      throw new Error("[ErixMeet] inline mode needs a valid `target` (selector or element).");
     }
     const iframe = document.createElement("iframe");
     iframe.src = this.url as string;
@@ -335,8 +329,7 @@ if (typeof window !== "undefined") {
     close: () => activeWidget?.close(),
     toggle: () => activeWidget?.toggle(),
     isOpen: () => activeWidget?.isOpen() ?? false,
-    updateConfig: (opts: Partial<ErixMeetConfig>) =>
-      activeWidget?.updateConfig(opts),
+    updateConfig: (opts: Partial<ErixMeetConfig>) => activeWidget?.updateConfig(opts),
     destroy: () => activeWidget?.destroy(),
   };
 }

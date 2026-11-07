@@ -9,18 +9,8 @@
  *   - {@link useErixMeet}    — imperative open/close controls.
  */
 
-import {
-  createElement,
-  useEffect,
-  useRef,
-  type CSSProperties,
-  type ReactElement,
-} from "react";
-import {
-  ErixMeetWidget,
-  resolveBookingUrl,
-  type ErixMeetConfig,
-} from "./index.js";
+import { type CSSProperties, createElement, type ReactElement, useEffect, useRef } from "react";
+import { type ErixMeetConfig, ErixMeetWidget, resolveBookingUrl } from "./index.js";
 
 export type ErixMeetProps = ErixMeetConfig;
 

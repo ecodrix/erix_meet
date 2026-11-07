@@ -3,7 +3,7 @@
 Embed your ECODrIx booking page on any website — a floating **"Book a meeting"**
 button + modal, or an **inline** calendar. No API keys: you only need your
 public **client code**. It renders the same hosted booking UI as
-`app.ecodrix.com/book/<clientCode>`, so bookings land in your CRM and (when
+`meet.ecodrix.com/book/<clientCode>`, so bookings land in your CRM and (when
 Google is connected) create a real Calendar/Meet event.
 
 ## Install
@@ -80,7 +80,7 @@ function Cta() {
 | ------------------ | -------------------------------------- | ------------------------- | -------------------------------------------------- |
 | `clientCode`       | `string`                               | —                         | Your public workspace code (or use `bookUrl`).     |
 | `slug`             | `string`                               | —                         | Book one event type directly; omit for the picker. |
-| `baseUrl`          | `string`                               | `https://app.ecodrix.com` | ECODrIx app origin.                                |
+| `baseUrl`          | `string`                               | `https://meet.ecodrix.com` | ECODrIx app origin.                                |
 | `bookUrl`          | `string`                               | —                         | Advanced: explicit booking URL.                    |
 | `mode`             | `"modal" \| "inline"`                  | `"modal"`                 | Inline requires `target`.                          |
 | `target`           | `string \| HTMLElement`                | —                         | Inline mount point (selector or element).          |
